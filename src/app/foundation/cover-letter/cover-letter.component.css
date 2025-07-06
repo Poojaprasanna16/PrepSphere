@@ -1,0 +1,92 @@
+/* Define the keyframes for the fade-in effect from bottom to top */
+@keyframes fadeInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(50px); /* Start from 50px below the element's normal position */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);    /* End at normal position */
+    }
+  }
+  
+  /* Apply the animation to headings, paragraphs, lists, and tables */
+  h1, h2, h3, h4, h5, h6, p, ul, ol {
+    animation: fadeInBottom 1s ease-out forwards; /* Apply animation */
+    opacity: 0;  /* Make elements initially invisible */
+  }
+  
+  /* Optionally, add a slight delay for each element to create a staggered effect */
+  h1 {
+    animation-delay: 0.2s;
+  }
+  
+  h2 {
+    animation-delay: 0.4s;
+  }
+  
+  h3 {
+    animation-delay: 0.6s;
+  }
+  
+  h4 {
+    animation-delay: 0.8s;
+  }
+  
+  h5 {
+    animation-delay: 1s;
+  }
+  
+  h6 {
+    animation-delay: 1.2s;
+  }
+  
+  p {
+    animation-delay: 1.4s;
+  }
+  
+  ul {
+    animation-delay: 1.6s;
+  }
+  
+  ol {
+    animation-delay: 1.8s; /* Optional delay */
+  }
+  
+  /* For list items inside unordered and ordered lists */
+  ul li, ol li {
+    animation: fadeInBottom 1s ease-out forwards;
+    opacity: 0;
+  }
+  
+  ul li {
+    animation-delay: 2s;
+  }
+  
+  ol li {
+    animation-delay: 2.2s;
+  }
+  
+  /* Optional: Add a delay to the .grayBody divs to control when the content fades in */
+  .grayBody {
+    animation: fadeInBottom 1s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .grayBody:nth-child(1) {
+    animation-delay: 2.4s;
+  }
+  
+  .grayBody:nth-child(2) {
+    animation-delay: 2.6s;
+  }
+  
+  .grayBody:nth-child(3) {
+    animation-delay: 2.8s;
+  }
+  
+  .hyperLink {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }

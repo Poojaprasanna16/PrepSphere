@@ -1,0 +1,70 @@
+/* General Styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  /* View Mode Styling */
+  .view-mode {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    margin: 5px 0;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .view-mode:hover {
+    background-color: #e9ecef;
+  }
+  
+  /* Edit Mode Styling */
+  input.form-control, select.form-control {
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  /* Button Container */
+  .button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+  /* Form Row Layout */
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .form-group {
+    flex: 1 1 calc(50% - 20px);
+  }
+  
+  @media (max-width: 720px) {
+    .form-group {
+      flex: 1 1 100%;
+    }
+  }
+  

@@ -1,0 +1,31 @@
+<div class="container">
+    <h2 style="text-align: center;"><u>Login</u></h2>
+    <h6 *ngIf="errorMessage != ''" style="color: red;">***{{errorMessage}}</h6>
+  
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email" style="margin-left: 0.5rem;">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email" />
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="text-danger">
+          <div *ngIf="f['email'].errors?.['required']">* Email is required.</div>
+          <div *ngIf="f['email'].errors?.['email']">* Invalid email format.</div>
+        </div>
+      </div>
+  
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password" style="margin-left: 0.5rem;">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="password" />
+        <div *ngIf="f['password'].touched && f['password'].invalid" class="text-danger">
+          <div *ngIf="f['password'].errors?.['required']">* Password is required.</div>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="button-container">
+        <button type="submit" class="btn btn-primary" style="margin-top: 1rem;" [disabled]="loginForm.invalid">Login</button>
+      </div>
+    </form>
+  </div>
+  

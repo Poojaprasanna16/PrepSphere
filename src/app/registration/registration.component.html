@@ -1,0 +1,87 @@
+
+
+<div class="container">
+    <h2 style="text-align: center;"><u>User Registration</u></h2>
+    <h6 *ngIf="errorMessage != ''" style="color: red;">***{{errorMessage}}</h6>
+  
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="registration-form">
+      <!-- Form Fields (unchanged) -->
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" formControlName="firstName" />
+        <div *ngIf="f['firstName'].touched && f['firstName'].invalid" class="text-danger">
+          * First Name is required.
+        </div>
+      </div>
+  
+            <!-- Last Name -->
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" formControlName="lastName" />
+        <div *ngIf="f['lastName'].touched && f['lastName'].invalid" class="text-danger">
+            * Last Name is required.
+        </div>
+      </div>
+  
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email" />
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="text-danger">
+          <div *ngIf="f['email'].errors?.['required']">* Email is required.</div>
+          <div *ngIf="f['email'].errors?.['email']">* Invalid email format.</div>
+        </div>
+      </div>
+  
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="password" formControlName="password" />
+        <!-- <button type="button" class="btn btn-link" (click)="togglePassword()">Show/Hide</button> -->
+        <div *ngIf="f['password'].touched && f['password'].invalid" class="text-danger">
+          <div *ngIf="f['password'].errors?.['required']">* Password is required.</div>
+          <div *ngIf="f['password'].errors?.['minlength']">* Password must be at least 8 characters.</div>
+          <div *ngIf="f['password'].errors?.['maxlength']">* Password must be at most 25 characters.</div>
+          <div *ngIf="f['password'].errors?.['pattern']">* Password must contain at least 1 capital letter, 1 number, and 1 symbol.</div>
+        </div>
+      </div>
+  
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" />
+        <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid" class="text-danger">
+            * Confirm Password is required.
+          <div *ngIf="registerForm.errors?.['mismatch']">* Passwords do not match.</div>
+        </div>
+      </div>
+  
+      <!-- Gender -->
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="form-control" id="gender" formControlName="gender">
+          <option value="">Select Gender</option>
+          <option *ngFor="let gender of genderOptions" [value]="gender">{{ gender }}</option>
+        </select>
+        <div *ngIf="f['gender'].touched && f['gender'].invalid" class="text-danger">
+            * Gender is required.
+        </div>
+      </div>
+  
+      <!-- Phone Number -->
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" />
+        <div *ngIf="f['phoneNumber'].touched && f['phoneNumber'].invalid" class="text-danger">
+          <div *ngIf="f['phoneNumber'].errors?.['required']">* Phone Number is required.</div>
+          <div *ngIf="f['phoneNumber'].errors?.['pattern']">* Phone Number must be 10 digits.</div>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="button-container">
+        <button type="submit" class="btn btn-primary" style="margin-top: 1rem;" [disabled]="registerForm.invalid">Register</button>
+      </div>      
+    </form>
+</div>
+  

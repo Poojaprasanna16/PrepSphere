@@ -1,0 +1,33 @@
+/* For responsive layout and form styling */
+.registration-form {
+    margin: 20px auto;
+    border: 2px solid #ccc; /* Border around the form */
+    padding: 20px;
+    border-radius: 10px; /* Optional: gives rounded corners to the border */
+    background-color: #f9f9f9; /* Optional: gives the form a light background */
+  }
+  
+  @media (min-width: 720px) {
+    .registration-form {
+      width: 50%; /* 50% width for screens larger than 720px */
+    }
+  }
+  
+  @media (max-width: 719px) {
+    .registration-form {
+      width: 80%; /* 80% width for screens smaller than or equal to 720px */
+    }
+  }
+  
+  label {
+    margin-left: 0.5rem; /* Adds left margin of 0.5rem */
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    align-items: center; /* Optional: centers the button vertically (if needed) */
+    width: 100%; /* Ensures the container takes up the full width */
+  }
+  
+  

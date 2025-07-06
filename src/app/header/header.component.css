@@ -1,0 +1,36 @@
+
+.buttonStyle{
+  background: white;
+  border-radius: 25px;
+}
+
+/* Initially hide the dropdown and set opacity to 0 */
+.dropdown-menu {
+    display: none;                    /* Hide initially */
+    opacity: 0;                        /* Start as fully transparent */
+    transform: translateY(-15px);      /* Start slightly above */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transitions for fade and slide */
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Optional: shadow for dropdown */
+    z-index: 1000;                     /* Ensure dropdown is on top */
+  }
+  
+  /* Show dropdown when hovering over the parent .nav-item */
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;                    /* Make it visible */
+    opacity: 1;                        /* Fully opaque */
+    transform: translateY(0);          /* Slide to its normal position */
+  }
+  
+  /* Optional: Style for the items inside the dropdown */
+  .dropdown-item {
+    padding: 0.5rem 1rem;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f1f1f1;  /* Highlight on hover */
+  }
+  

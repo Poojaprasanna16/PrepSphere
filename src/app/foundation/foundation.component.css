@@ -1,0 +1,81 @@
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 20px;
+}
+
+h1,h2,h3,h4{
+    font-weight: bold;
+}
+
+h1,
+h2 {
+    margin-bottom: 15px;
+}
+
+h1{
+    text-align: center;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/***** Animation effect ****/
+
+/* Define the keyframes for the fade-in effect from bottom to top */
+@keyframes fadeInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(50px); /* Start from 50px below the element's normal position */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);    /* End at normal position */
+    }
+  }
+  
+  /* Apply the animation to headings, paragraphs, lists, and table */
+  h1, h4, p, ul, table {
+    animation: fadeInBottom 1s ease-out forwards; /* Apply animation */
+    opacity: 0;  /* Make elements initially invisible */
+  }
+  
+  /* Optionally, add a slight delay for each element to create a staggered effect */
+  h1 {
+    animation-delay: 0.2s;
+  }
+  
+  h4 {
+    animation-delay: 0.4s;
+  }
+  
+  p {
+    animation-delay: 0.6s;
+  }
+  
+  ul {
+    animation-delay: 0.8s;
+  }
+  
+  table {
+    animation-delay: 1s; /* Optional delay */
+  }
+  
+
+.footerButton{
+  width: 100%;
+  
+}
+  

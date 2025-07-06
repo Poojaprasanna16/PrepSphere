@@ -1,0 +1,39 @@
+
+
+/* Define the fadeInFromBottom animation */
+@keyframes fadeInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Start below the normal position */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the normal position */
+    }
+}
+
+/* Apply the animation to the elements */
+h1,
+h2,
+p,
+.grayBody ul,
+.grayBody li {
+    animation: fadeInFromBottom 1s ease-out forwards;
+}
+
+/* Optional delay for specific elements to appear after the previous one */
+h1 {
+    animation-delay: 0.2s;
+}
+
+p {
+    animation-delay: 0.5s;
+}
+
+.grayBody ul {
+    animation-delay: 0.8s;
+}
+
+.grayBody li {
+    animation-delay: 1s;
+}

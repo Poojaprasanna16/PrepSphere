@@ -1,0 +1,78 @@
+<div class="container">
+    <h2 style="text-align: center;"><u>My Profile</u></h2>
+  
+    <div *ngIf="userDetails != null">
+      <form [formGroup]="userForm" class="user-details-form">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input *ngIf="isEditMode" type="text" class="form-control" id="firstName" formControlName="firstName" />
+            <div *ngIf="!isEditMode" class="view-mode">{{ userForm.value.firstName }}</div>
+            <div *ngIf="f['firstName'].touched && f['firstName'].invalid" class="text-danger">
+              * First Name is required.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input *ngIf="isEditMode" type="text" class="form-control" id="lastName" formControlName="lastName" />
+            <div *ngIf="!isEditMode" class="view-mode">{{ userForm.value.lastName }}</div>
+            <div *ngIf="f['lastName'].touched && f['lastName'].invalid" class="text-danger">
+              * Last Name is required.
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input *ngIf="isEditMode" type="email" class="form-control" id="email" formControlName="email" />
+            <div *ngIf="!isEditMode" class="view-mode">{{ userForm.value.email }}</div>
+            <div *ngIf="f['email'].touched && f['email'].invalid" class="text-danger">
+              <div *ngIf="f['email'].errors?.['required']">* Email is required.</div>
+              <div *ngIf="f['email'].errors?.['email']">* Invalid email format.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input *ngIf="isEditMode" type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" />
+            <div *ngIf="!isEditMode" class="view-mode">{{ userForm.value.phoneNumber }}</div>
+            <div *ngIf="f['phoneNumber'].touched && f['phoneNumber'].invalid" class="text-danger">
+              <div *ngIf="f['phoneNumber'].errors?.['required']">* Phone Number is required.</div>
+              <div *ngIf="f['phoneNumber'].errors?.['pattern']">* Phone Number must be 10 digits.</div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select *ngIf="isEditMode" class="form-control" id="gender" formControlName="gender">
+              <option value="">Select Gender</option>
+              <option *ngFor="let gender of genderOptions" [value]="gender">{{ gender }}</option>
+            </select>
+            <div *ngIf="!isEditMode" class="view-mode">{{ userForm.value.gender }}</div>
+            <div *ngIf="f['gender'].touched && f['gender'].invalid" class="text-danger">
+              * Gender is required.
+            </div>
+          </div>
+        </div>
+  
+        <!-- Error message for global form issues -->
+        <div *ngIf="errorMessage" class="text-danger">
+          {{ errorMessage }}
+        </div>
+  
+        <!-- Action Buttons (Edit/Save/Cancel) -->
+        <div class="button-container">
+          <button type="button" class="btn btn-secondary" (click)="toggleEditMode()">
+            {{ isEditMode ? 'Cancel' : 'Edit' }}
+          </button>
+          <button *ngIf="isEditMode" type="button" class="btn btn-primary" (click)="saveChanges()">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

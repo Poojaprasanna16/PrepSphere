@@ -1,0 +1,29 @@
+/* For responsive layout and form styling */
+.login-form {
+    margin: 20px auto;
+    border: 2px solid #ccc; /* Border around the form */
+    padding: 20px;
+    border-radius: 10px; /* Optional: gives rounded corners to the border */
+    background-color: #f9f9f9; /* Optional: gives the form a light background */
+  }
+  
+  @media (min-width: 720px) {
+    .login-form {
+      width: 50%; /* 50% width for screens larger than 720px */
+    }
+  }
+  
+  @media (max-width: 719px) {
+    .login-form {
+      width: 80%; /* 80% width for screens smaller than or equal to 720px */
+    }
+  }
+  
+  /* To center the submit button */
+  .button-container {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    align-items: center; /* Optional: centers the button vertically (if needed) */
+    width: 100%; /* Ensures the container takes up the full width */
+  }
+  

@@ -1,0 +1,63 @@
+
+
+
+/*** Animation Effect ***/
+
+/* Define the keyframes for the fade-in effect from bottom to top */
+@keyframes fadeInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(50px); /* Start from 50px below the element's normal position */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);    /* End at normal position */
+    }
+  }
+  
+  /* Apply the animation to headings, paragraphs, lists, and tables */
+  h1, h3, p, ul, ol {
+    animation: fadeInBottom 1s ease-out forwards; /* Apply animation */
+    opacity: 0;  /* Make elements initially invisible */
+  }
+  
+  /* Optionally, add a slight delay for each element to create a staggered effect */
+  h1 {
+    animation-delay: 0.2s;
+  }
+  
+  h3 {
+    animation-delay: 0.4s;
+  }
+  
+  p {
+    animation-delay: 0.6s;
+  }
+  
+  ul {
+    animation-delay: 0.8s;
+  }
+  
+  ol {
+    animation-delay: 1s; /* Optional delay */
+  }
+  
+  /* For list items inside unordered and ordered lists */
+  ul li, ol li {
+    animation: fadeInBottom 1s ease-out forwards;
+    opacity: 0;
+  }
+  
+  ul li {
+    animation-delay: 1.2s;
+  }
+  
+  ol li {
+    animation-delay: 1.4s;
+  }
+  
+  .hyperLink {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }
